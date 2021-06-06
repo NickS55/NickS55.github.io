@@ -1,4 +1,30 @@
 baseURL = "https://NickS55.github.io/"
 languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "hugo-tanka"
+title = "Nicholas Sadd | Baseball Player / Software Engineer"
+theme = "hugo-tanka2"
+
+[params]
+  sitename = "Nicholas Sadd"
+  description = "Software Engineer & Baseball Player"
+  faviconfile = "images/favicon.png"
+  highlightjs = true
+  progressively = false
+# commentsrepo = "user/repo"
+
+[[menu.primary]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.primary]]
+    name = "About Me"
+    url = "/about-me/"
+    weight = 2
+[[menu.primary]]
+    name = "Projects"
+    url = "/Projects/"
+    weight = 3
+[[menu.primary]]
+    name = "Writings"
+    url = "/posts/"
+    weight = 4
+

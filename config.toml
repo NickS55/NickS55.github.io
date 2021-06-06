@@ -21,7 +21,7 @@ theme = "hugo-tanka2"
     weight = 2
 [[menu.primary]]
     name = "Projects"
-    url = "/Projects/"
+    url = "/Pro/"
     weight = 3
 [[menu.primary]]
     name = "Writings"

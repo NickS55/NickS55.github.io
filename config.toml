@@ -5,7 +5,7 @@ theme = "hugo-tanka2"
 
 [params]
   sitename = "Nicholas Sadd"
-  description = "Software Engineer & Baseball Player"
+  description = "Software Engineer | Baseball Player"
   faviconfile = "images/favicon.png"
   highlightjs = true
   progressively = false

@@ -25,6 +25,7 @@ a {
     color: #333333;
     text-decoration: underline;
     background-color: transparent;
+    text-align: center;
 }
 
 a:active, a:hover {
@@ -145,6 +146,24 @@ hr {
     max-width: 100%;
 }
 
+.content .profile {
+    width: 150px;
+}
+
+img[src*="#pitching"] {
+    width:30%;
+    float: left;
+    margin: 4%;
+    border: 5px;
+    border-color: #738491;
+    
+ } 
+.content .profile img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
 .content .markdown code, .content .markdown pre {
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     background-color: #fff;

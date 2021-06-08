@@ -17,7 +17,7 @@ draft: fasle
 
 ## Eductation
 - ### Bucknell University
-    - Computer Science B.A.| 2017 - 2021
+    - Computer Science B.A. | 2017 - 2021
     - Patriot League Academic Honor Roll 2020
     - Division 1 Baseball player
 

@@ -11,6 +11,11 @@ theme = "hugo-tanka2"
   progressively = false
 # commentsrepo = "user/repo"
 
+    github = "NickS55"
+    linkedIn = "nicholas-sadd-114b43163/"
+    twitter = "NicholasSadd"
+    contact = "nicholassadd@gmail.com"
+
 [[menu.primary]]
     name = "Home"
     url = "/"

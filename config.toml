@@ -32,4 +32,8 @@ theme = "hugo-tanka2"
     name = "Writings"
     url = "/posts/"
     weight = 4
+[[menu.primary]]
+    name = "Now"
+    url = "/now/"
+    weight = 5
 

@@ -13,7 +13,9 @@ This is a variation of a "[now page](https://nownownow.com/about)" !!
 Deciding between work and graduate school
 
 ### What am I learning: 
-Right now I am learning the [go](golang.org) progrmaming language.
+I am learning the [go](golang.org) progrmaming language. This is to help write the Sixth Sense Project.
+
+I am also taking a dive into [Haskell](https://www.haskell.org/) to learn functional programming.
 
 ### Project(s):
 [Sixth Sense](https://github.com/NickS55/SixthSense) - a web application designed to bridge the gap between data and coaches

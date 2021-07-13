@@ -18,7 +18,7 @@ I am learning the [go](golang.org) progrmaming language. This is to help write t
 I am also taking a dive into [Haskell](https://www.haskell.org/) to learn functional programming.
 
 ### Project(s):
-[Sixth Sense](../PitchSiumulator) - a web application designed to bridge the gap between data and coaches
+[Sixth Sense](../PitchSimulator) - a web application designed to bridge the gap between data and coaches
 
 ### Reading:
 Thinking Fast and Slow by Daniel Kahneman\

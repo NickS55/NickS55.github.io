@@ -4,6 +4,8 @@ date: 2021-06-06T15:15:37-04:00
 draft: fasle
 ---
 ## Experience
+- ### UI Engineer
+    - ##### Cox Automotive
 - ### Software Engineer intern
     - ##### iFOLIO | Summer 2020
         - Maintained, added features to, and fixed bugs on massive SaaS PHP web application with 1000’s of users.

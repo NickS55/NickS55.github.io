@@ -1,6 +1,0 @@
-[submodule "themes/hugo-tanka"]
-	path = themes/hugo-tanka
-	url = https://github.com/nanxstats/hugo-tanka
-[submodule "themes/hugo-tanka2"]
-	path = themes/hugo-tanka2
-	url = https://github.com/NickS55/hugo-tanka

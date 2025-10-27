@@ -20,7 +20,7 @@ jobs:
           python-version: '3.x'
 
       - name: Generate RSS feed
-        working-directory: release-notes
+        working-directory: FirstPitch
         run: python rss_generator.py
 
       - name: Commit and push RSS feed

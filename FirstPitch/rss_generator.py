@@ -27,7 +27,7 @@ def generate_feed():
     ET.SubElement(channel, "title").text = FEED_TITLE
     ET.SubElement(channel, "link").text = FEED_LINK
     ET.SubElement(channel, "description").text = FEED_DESCRIPTION
-    ET.SubElement(channel, "lastBUildDate").text = datetime.datetime.now("%a, %d %b %Y %H:%M:%S GMT")
+    ET.SubElement(channel, "lastBuildDate").text = datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S GMT")
 
     if not os.path.exists(NOTES_DIR):
         print(f"No '{NOTES_DIR}' directory found.")

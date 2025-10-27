@@ -1,0 +1,32 @@
+name: Generate RSS Feed
+
+on:
+  push:
+    paths:
+      - 'FirstPitch/notes/**'  # only run when new notes are added/changed
+  workflow_dispatch:               # allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Generate RSS feed
+        working-directory: release-notes
+        run: python rss_generator.py
+
+      - name: Commit and push RSS feed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add release-notes/rss.xml
+          git commit -m "Auto-update RSS feed" || echo "No changes to commit"
+          git push

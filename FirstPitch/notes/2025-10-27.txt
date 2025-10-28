@@ -1,0 +1,3 @@
+October 27th 2025
+- Add card to AWS account
+- Start connecting DNS records

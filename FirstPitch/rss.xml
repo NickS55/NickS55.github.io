@@ -1,5 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0"><channel><title>Project First Pirch</title><link>https://nicks55.github.io/FirstPitch</link><description>Daily release notes for Project First Pirch.</description><lastBuildDate>Mon, 27 Oct 2025 01:27:45 GMT</lastBuildDate><item><title>Release Notes 2025-10-26</title><link>https://nicks55.github.io/FirstPitch/2025-10-26</link><description>October 26th 2025 
+<rss version="2.0"><channel><title>Project First Pirch</title><link>https://nicks55.github.io/FirstPitch</link><description>Daily release notes for Project First Pirch.</description><lastBuildDate>Tue, 28 Oct 2025 15:15:47 GMT</lastBuildDate><item><title>Release Notes 2025-10-27</title><link>https://nicks55.github.io/FirstPitch/2025-10-27</link><description>October 27th 2025
+- Add card to AWS account
+- Start connecting DNS records</description><pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate></item><item><title>Release Notes 2025-10-26</title><link>https://nicks55.github.io/FirstPitch/2025-10-26</link><description>October 26th 2025 
 - Purchase NickSadd Domain Name
 - Start RSS Feed for Tracking in TRMNL
 - Start Project First Pitch</description><pubDate>Sun, 26 Oct 2025 00:00:00 GMT</pubDate></item></channel></rss>

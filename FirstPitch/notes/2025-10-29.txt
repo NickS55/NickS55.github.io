@@ -1,0 +1,5 @@
+October 29th 2025
+- Use AWS Name Servers
+- Update has not processed, check tomorrow
+- - dig NS nicksadd.com
+- todo: update python tomorrow to fix mixed-content errors

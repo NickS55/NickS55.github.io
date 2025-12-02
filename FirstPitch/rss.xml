@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0"><channel><title>Project First Pirch</title><link>https://nicks55.github.io/FirstPitch</link><description>Daily release notes for Project First Pirch.</description><lastBuildDate>Mon, 10 Nov 2025 04:18:45 GMT</lastBuildDate><item><title>Release Notes 2025-11-09</title><link>https://nicks55.github.io/FirstPitch/2025-11-09</link><description>November 9th, 2025
+<rss version="2.0"><channel><title>Project First Pirch</title><link>https://nicks55.github.io/FirstPitch</link><description>Daily release notes for Project First Pirch.</description><lastBuildDate>Tue, 02 Dec 2025 05:11:12 GMT</lastBuildDate><item><title>Release Notes 2025-12-01</title><link>https://nicks55.github.io/FirstPitch/2025-12-01</link><description>December 1st, 2025
+- get CV to work on the endpoint
+
+next: 
+- create a queue, 
+- with an ecs worker to consume jobs
+- aws batch or step functions
+- poll from frontend to get status updates
+- update UI
+- password protect site</description><pubDate>Mon, 01 Dec 2025 00:00:00 GMT</pubDate></item><item><title>Release Notes 2025-11-09</title><link>https://nicks55.github.io/FirstPitch/2025-11-09</link><description>November 9th, 2025
 - Fix DNS again
 - add astro site
 - add python service

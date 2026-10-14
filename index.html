@@ -52,6 +52,11 @@
             padding-bottom: 8px;
         }
 
+        h1 {
+            font-size: 48px;
+            margin: 20px 0 4px;
+        }
+
         .container {
             width: 100%;
             max-width: 560px;
@@ -59,9 +64,6 @@
             margin: auto;
         }
 
-        hr {
-            border-top: 1px #ccc
-        }
 
         a {
             text-decoration-skip: ink;
@@ -72,18 +74,32 @@
             color: #E87722;
         }
 
+        a.flock:hover {
+            color: #2E9212;
+        }
+
+        a.couchslop:hover {
+            color: #B07A3C;
+        }
+
+        a.allnine:hover {
+            color: #2C4BB0;
+        }
+
+        footer {
+            margin-top: 40px;
+        }
+
         ul.links {
             display: flex;
             flex-wrap: wrap;
-
-            /* margin: 0; padding: 0; */
+            justify-content: center;
+            gap: 8px 20px;
             padding-inline-start: 0px;
             list-style: none;
         }
 
         ul.links>li {
-            margin-right: 20px;
-            font-family: sans-serif;
             font-size: 16px;
             color: #777;
         }
@@ -99,11 +115,208 @@
             line-height: 1.2
         }
 
-        #image-container img {
+        #image-container {
+            width: 240px;
+            height: 176px;
+            margin: 0 auto;
+            perspective: 700px;
+        }
+
+        .cube {
+            position: relative;
+            width: 240px;
+            height: 176px;
+            transform-style: preserve-3d;
+            transform: translateZ(-120px) rotateY(0deg);
+            transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .face {
+            position: absolute;
+            inset: 0;
+            margin: 0;
+            backface-visibility: hidden;
+            background: #fff;
+        }
+
+        .face:nth-child(1) { transform: rotateY(0deg) translateZ(120px); }
+        .face:nth-child(2) { transform: rotateY(90deg) translateZ(120px); }
+        .face:nth-child(3) { transform: rotateY(180deg) translateZ(120px); }
+        .face:nth-child(4) { transform: rotateY(270deg) translateZ(120px); }
+
+        .face img {
+            display: block;
+            margin: 0 auto;
             width: 150px;
             height: 150px;
-            background-color: #add8e6;
+            object-fit: cover;
             border-radius: 100%;
+            background-color: #add8e6;
+        }
+
+        .face img.fit {
+            object-fit: contain;
+        }
+
+        .face figcaption {
+            margin-top: 6px;
+            font-size: 13px;
+            line-height: 1.3;
+            color: #777;
+        }
+
+        a {
+            text-decoration-skip: ink;
+            color: inherit;
+        }
+
+        a:hover {
+            color: #E87722;
+        }
+
+        a.flock:hover {
+            color: #2E9212;
+        }
+
+        a.couchslop:hover {
+            color: #B07A3C;
+        }
+
+        a.allnine:hover {
+            color: #2C4BB0;
+        }
+
+        footer {
+            margin-top: 40px;
+        }
+
+        ul.links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 20px;
+            padding-inline-start: 0px;
+            list-style: none;
+        }
+
+        ul.links>li {
+            font-size: 16px;
+            color: #777;
+        }
+
+        ul.links a {
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2
+        }
+
+
+        /* Hover (or tap) the block and every picture fans out with its caption. */
+        #image-container {
+            position: relative;
+            --gap: min(170px, 19vw);
+            --card: min(170px, 30vw);
+        }
+
+        .cube {
+            transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.25s ease;
+        }
+
+        #image-container.open .cube {
+            opacity: 0;
+        }
+
+        .fan {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: calc(4 * var(--gap) + var(--card));
+            height: 250px;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        #image-container.open .fan {
+            pointer-events: auto;
+        }
+
+        .fan figure {
+            position: absolute;
+            top: 0;
+            left: calc(50% - var(--card) / 2);
+            width: var(--card);
+            margin: 0;
+            opacity: 0;
+            transform: scale(0.6);
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.25s ease;
+            transition-delay: calc(var(--n) * 40ms);
+        }
+
+        #image-container.open .fan figure {
+            opacity: 1;
+            transform: translateX(calc(var(--k) * var(--gap))) translateY(calc(var(--k) * var(--k) * 8px)) rotate(calc(var(--k) * 4deg));
+        }
+
+        .fan img {
+            display: block;
+            width: min(130px, 22vw);
+            height: min(130px, 22vw);
+            margin: 0 auto;
+            object-fit: cover;
+            border-radius: 100%;
+            background-color: #add8e6;
+        }
+
+        .fan img.fit {
+            object-fit: contain;
+        }
+
+        .fan figcaption {
+            margin-top: 6px;
+            font-size: 13px;
+            line-height: 1.3;
+            color: #777;
+        }
+
+        /* On a phone there is no room for an arc: the fan opens as a grid, three over two. */
+        @media (max-width: 640px) {
+            .fan {
+                width: 100vw;
+                height: 330px;
+            }
+
+            #image-container.open .fan {
+                background: #fff;
+            }
+
+            .fan figure {
+                --card: 31vw;
+            }
+
+            .fan img {
+                width: 24vw;
+                height: 24vw;
+            }
+
+            .fan figure:nth-child(1) { --x: -1; --y: 0; }
+            .fan figure:nth-child(2) { --x: 1; --y: 0; }
+            .fan figure:nth-child(3) { --x: 0; --y: 0; }
+            .fan figure:nth-child(4) { --x: -0.5; --y: 1; }
+            .fan figure:nth-child(5) { --x: 0.5; --y: 1; }
+
+            #image-container.open .fan figure {
+                transform: translate(calc(var(--x) * 32vw), calc(var(--y) * 165px));
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fan figure, .cube { transition: opacity 0.2s ease; }
         }
     </style>
 </head>
@@ -114,45 +327,102 @@
 
         <header>
             <div id="image-container">
-                <img src="dogs.PNG" alt="Two Dogs">
+                <div class="cube">
+                    <figure class="face">
+                        <img src="dogs-square.png" alt="Two dogs, drawn by Sawyer Sadd" class="fit">
+                        <figcaption>Drawing by <a href="https://sawyersadd.com">Sawyer Sadd</a></figcaption>
+                    </figure>
+                    <figure class="face"></figure>
+                    <figure class="face"></figure>
+                    <figure class="face"></figure>
+                </div>
+                <div class="fan" aria-hidden="true"></div>
             </div>
             <h1>Nicholas Sadd</h1>
-            <p>Integrating software, business and community. </p>
+            <p>ML and software engineer in Atlanta.</p>
         </header>
 
-        <p><strong>Contact:</strong>
-            &lt;my name&gt;@gmail.com
+        <p>I work at <a class="flock" href="https://www.flocksafety.com/blog/how-ncmec-and-flock-safety-bring-missing-children-home">Flock Safety</a>
+            on the Alerts page, helping police solve crimes across the United States. Before that I was at Cox
+            Automotive, working on <a href="https://www.autotrader.com">Autotrader</a> and developing features for
+            millions of users.
         </p>
 
-        <p> <strong>Updated: </strong>April 2024</p>
+        <p>I have two large projects of my own:</p>
+        <ul>
+            <li><a class="couchslop" href="https://couchslop.com">couchslop</a>, party games for the TV. 3D games that
+                run in the browser, with real-time networking.</li>
+            <li><a class="allnine" href="https://allninesports.com">AllNine</a>, a platform to manage baseball teams.</li>
+        </ul>
 
-        <p>
-            <strong>Current Employer: </strong>
-            Cox Automotive (working on <a href="https://www.autotrader.com">Autotrader</a>)
+        <p>Other things I’ve built: an RPG video game, a baseball physics simulator, a compiler in C++, and a social
+            media account that reached hundreds of thousands of people.
         </p>
 
-        <p><strong>About: </strong>
-            I have experience creating solutions to problems leveraging design, software and social media.
+        <p>I also take on contract work, mostly web apps, fine-tuning ML models, real-time systems and cloud.
+            <a href="mailto:nicholassadd@gmail.com?subject=Contract%20work">Email me</a>.</p>
 
-        <p>My experience includes maintaining and adding features to legacy web applications with millions of users,
-            designing and programming an RPG video game,
-            launching a social media account reaching 100,000s of unique viewers,
-            creating a compiler in C++ (in progress),
-            and implementing a baseball physics simulator.
-        </p>
-
-        <p><strong>Image Credit: </strong>Professional Artist / Brother <a href="https://sawyersadd.com">Sawyer Sadd</a>
-        </p>
-        <hr>
         <footer>
             <ul class="links">
+                <li><a href="mailto:nicholassadd@gmail.com">Email</a></li>
                 <li><a href="https://www.linkedin.com/in/nicholas-sadd-114b43163/">LinkedIn</a></li>
-                <li><a href="https://github.com/NickS55">Github</a></li>
+                <li><a href="https://github.com/NickS55">GitHub</a></li>
+                <li><a href="credits.html">Image Credits</a></li>
             </ul>
         </footer>
 
     </div>
 
+    <script>
+        // The top picture is a block that turns a quarter at a time. Each face carries its picture and
+        // caption; the face about to come round gets the next slide while it is still out of sight.
+        const slides = [
+            ['dogs-square.png', 'Two dogs, drawn by Sawyer Sadd', 'Drawing by <a href="https://sawyersadd.com">Sawyer Sadd</a>', 'fit'],
+            ['nick.jpg', 'Nicholas Sadd', 'Me'],
+            ['flock.jpg', 'A Flock Safety camera on a street pole', 'A Flock Safety camera'],
+            ['autotrader.jpg', 'The Autotrader number 2 car doing a burnout in Atlanta', 'The Autotrader car'],
+            ['spud.jpg', 'Spud, the couchslop potato', 'Spud, from <a href="https://couchslop.com">couchslop</a>'],
+        ];
+        const cube = document.querySelector('.cube');
+        const faces = document.querySelectorAll('.face');
+        const fill = (face, [src, alt, caption, cls]) => {
+            face.innerHTML = `<img src="${src}" alt="${alt}"${cls ? ` class="${cls}"` : ''}><figcaption>${caption}</figcaption>`;
+        };
+        slides.slice(1).forEach(([src]) => { new Image().src = src; });
+        let turns = 0;
+        fill(faces[1], slides[1]);
+        const turn = () => {
+            turns += 1;
+            cube.style.transform = `translateZ(-120px) rotateY(${turns * -90}deg)`;
+            // Load the slide after this one onto the face that comes round next time.
+            setTimeout(() => fill(faces[(turns + 1) % 4], slides[(turns + 1) % slides.length]), 950);
+        };
+        // The fan: every slide at once, spread in an arc.
+        const box = document.getElementById('image-container');
+        const fan = box.querySelector('.fan');
+        // You sit in the middle of the fan.
+        [0, 2, 1, 3, 4].map((i) => slides[i]).forEach((slide, n) => {
+            const f = document.createElement('figure');
+            fill(f, slide);
+            f.style.setProperty('--k', n - (slides.length - 1) / 2);
+            f.style.setProperty('--n', n);
+            fan.append(f);
+        });
+        const open = (on) => box.classList.toggle('open', on);
+        // Hovering with a mouse opens it for a look; a click or tap keeps it open until the next one.
+        let pinned = false;
+        box.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse' && !pinned) open(true); });
+        box.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse' && !pinned) open(false); });
+        box.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            pinned = !pinned;
+            open(pinned);
+        });
+
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            setInterval(() => { if (!document.hidden && !box.classList.contains('open')) turn(); }, 3500);
+        }
+    </script>
 </body>
 
 </html>
